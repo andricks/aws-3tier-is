@@ -42,8 +42,8 @@ env PATH=$PATH:/usr/local/bin pm2 startup -u ubuntu &&
 echo "const http = require('http'); const server = http.createServer((req, res) => { res.statusCode = 200; res.setHeader('Content-Type', 'text/plain'); res.end('Hello, World!'); }); server.listen(4000, () => { console.log('Server running at http://localhost:3000/'); });" > hello-world.js && pm2 start hello-world.js --name backend &&
 
 
-git clone https://github.com/bcarranza/money-tracker.git &&
-cd money-tracker &&
+git clone https://github.com/andricks/ItemSoftware.git &&
+cd ItemSoftware &&
 
 # Deploying frontend for the first time
 echo REACT_APP_API_URL="${backend_url}:4000/api" > .env &&
@@ -57,7 +57,7 @@ systemctl restart nginx &&
 
 # Deploying backend for the first time
 cd api &&
-echo MONGO_URL="mongodb+srv://admin:T9ud6IkaljkQQrA2@moneytracker.pmedkyg.mongodb.net/?retryWrites=true&w=majority&appName=moneytracker" > .env &&
+echo MONGO_URL="mongodb+srv://aestradaa10:8C1lW1hktkdWvCda@database.2bnxshh.mongodb.net/?retryWrites=true&w=majority&appName=database" > .env &&
 # Start the application with PM2
 npm install &&
 pm2 delete backend &&
