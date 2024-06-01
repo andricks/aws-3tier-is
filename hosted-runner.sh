@@ -15,11 +15,12 @@ mkdir actions-runner && cd actions-runner
 curl -o actions-runner-linux-x64-2.316.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.316.0/actions-runner-linux-x64-2.316.0.tar.gz
 # Optional: Validate the hash
 echo "d62de2400eeeacd195db91e2ff011bfb646cd5d85545e81d8f78c436183e09a8  actions-runner-linux-x64-2.316.1.tar.gz" | shasum -a 256 -c
+# Extract the installer
 tar xzf ./actions-runner-linux-x64-2.316.0.tar.gz
 
 # Create the runner and start the configuration experience
 export RUNNER_ALLOW_RUNASROOT="1"
 export SERVERNAME="CRUD"
-./config.sh --url https://github.com/andricks/ItemSoftware --token ATSOYDJOMDPGHQJPP3BPSR3GLNOGS --name webserver-$(echo $SERVERNAME) --labels $(echo $SERVERNAME) --unattended
+./config.sh --url https://github.com/andricks/ItemSoftware --token ATSOYDNKF6X7WGSYGXSRBWDGLNQVG --name webserver-$(echo $SERVERNAME) --labels $(echo $SERVERNAME) --unattended
 # Last step, run it!
 nohup ./run.sh > /dev/null 2>&1 &
